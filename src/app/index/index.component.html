@@ -1,0 +1,28 @@
+An ng-select component specifying [editableSearchTerm]="true". Interacting with this component hides the
+&lt;span class="ng-value-label"&gt;. Updating this component by altering ngModel prior to interacting with it works as
+expected. Modifying ngModel after opening the component does successfully update &lt;span class="ng-value-label"&gt; but
+does not modify &lt;input #searchInput&gt;, so the search text is never updated to match the new model value. Clicking the
+'x' to remove the value clears out the search term and makes &lt;span class="ng-value-label"&gt; visible again, re-enabling
+programmatic updates via ngModel.
+<ng-select [(ngModel)]="selectedId"
+           [editableSearchTerm]="true">
+  <ng-option *ngFor="let entity of entities" [value]="entity.id">{{entity.name}}</ng-option>
+</ng-select>
+
+<br />
+
+An ng-select component specifying [editableSearchTerm]="false". Interacting with this component does not hide the
+&lt;span class="ng-value-label"&gt;. Updating this component by altering ngModel works as expected, and the aforementioned
+span displays the newly selected value.
+<ng-select [(ngModel)]="selectedId"
+           [editableSearchTerm]="false">
+  <ng-option *ngFor="let entity of entities" [value]="entity.id">{{entity.name}}</ng-option>
+</ng-select>
+
+<br />
+
+<button (click)="selectedId = undefined">Clear</button>
+<button (click)="selectedId = 1">Select Item 1</button>
+<button (click)="selectedId = 2">Select Item 2</button>
+<button (click)="selectedId = 3">Select Item 3</button>
+<button (click)="selectedId = 4">Select Item 4</button>
