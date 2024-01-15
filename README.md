@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-##Issue replication
+## Issue replication
 
 1. Attempt to change the content of the ng-select components by clicking the `Item #` buttons below, or clear out the ng-select components by clicking `Clear`. The components should update accordingly.
 2. Click both of the ng-select components to open the dropdown.
